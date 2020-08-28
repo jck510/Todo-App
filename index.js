@@ -55,6 +55,90 @@ const createTodoItem = (task, priority, id) => {
     });
 };
 
+const sortLowestPriority = () => {
+
+    /**
+   * Algorithm
+   *
+   * 1 - Remove all list items from dom (but not the array we use to store items)
+   * 2 - add a spinner to the screen to simulate algorotihm running
+   * 3 - sort the array descending of the items currently in the array of item
+   * 4 - call the createTodoItem function on each item of the array using modern JS
+   * 5 - DOM should represent the sorted low - high priority array
+   */
+
+   while(task_list.firstChild){
+       task_list.removeChild(task_list.firstChild);
+   }
+
+   const spin = document.createElement("DIV");
+   spin.classList.add("spinner-border","spin");
+   spin.setAttribute("role","status");
+   task_list.appendChild(spin);
+
+   //hide the sort buttons to just make the screen ui cleaner
+   highLow.style.display = "none";
+   lowHigh.style.display = "none";
+
+   //sort the array ascending
+   items.sort((a,b) => a.priority - b.priority);
+
+   setTimeout(() => {
+       task_list.removeChild(spin);
+       highLow.style.display = "flex";
+       lowHigh.style.display = "flex";
+       items.forEach((todo) => {
+           createTodoItem(todo.task, todo.priority);
+       });
+   }, 500);
+};
+
+const sortHighestPriority = () => {
+    /**
+     * Algorithm
+     *
+     * 1 - Remove all list items from dom (but not the array we use to store items)
+     * 2 - add a spinner to the screen to simulate algorotihm running
+     * 3 - sort the array descending of the items currently in the array of item
+     * 4 - call the createTodoItem function on each item of the array using modern JS
+     * 5 - DOM should represent the sorted high - low priority array
+     */
+  
+    // remove the existing items
+    while (task_list.firstChild) {
+      task_list.removeChild(task_list.firstChild);
+    }
+  
+    // add spinner to the UI to simnulate the algorithm running
+    const spin = document.createElement("DIV");
+    spin.classList.add("spinner-border", "spin");
+    spin.setAttribute("role", "status");
+    task_list.appendChild(spin);
+  
+    // hide the sort buttons to just make the screen UI cleaner
+    highLow.style.display = "none";
+    lowHigh.style.display = "none";
+  
+    // sort the array descending
+    items.sort((a, b) => b.priority - a.priority);
+  
+    // wait at least a second to remove the spinner - this is async so it waits for all other code to finish first, if needed
+    setTimeout(() => {
+      // wait at least one second and remove the spnner and show the new sorted list
+      task_list.removeChild(spin);
+      highLow.style.display = "flex";
+      lowHigh.style.display = "flex";
+      items.forEach((todo) => {
+        createTodoItem(todo.task, todo.priority);
+      });
+    }, 500);
+  };
+
+
+
+// Sorting event listeners
+highLow.addEventListener('click',sortHighestPriority);
+lowHigh.addEventListener('click',sortLowestPriority);
 
 submitBtn.addEventListener('click', (e) => {
     if(task_input.value === ''){
@@ -78,5 +162,5 @@ submitBtn.addEventListener('click', (e) => {
     
     //clear last entered todo
     task_input.value = "";
-    priority_input.value = 0;
+    priority_input.value = 1;
 });
