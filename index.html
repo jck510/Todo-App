@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">    
+    <title>Todo List</title>
+</head>
+<body>
+
+    <!--Navigation Section-->
+    <nav class="top__nav">
+        <ul class="nav__container">
+            <h1 class="title">Todo List</h1>
+        </ul>
+        
+    </nav>
+
+    <!--Task Input-->
+
+    <div class="task__container">
+        <input type="text" name = "task" id="task__input" placeholder="Enter a todo">
+        <label for="priority">Give this Item a priority (1-5)</label>
+        <input type="number" name = "priority" value = "1" min = "1" max = "5" id="priority__input">
+        <button id="submit__task">Submit</button>
+
+
+    </div>
+
+    <div class="container_">
+        <div class="filterables">
+            <button id = "sort__high">Sort High to Low</button>
+            <button id = "sort__low">Sort Low to High</button>
+        </div>
+        <!--JS will inject HTML here with dom manipulation-->
+        <ul id="list__todo-items"></ul>
+    </div>
+
+    <!--Including the JS file-->
+    <script src = "./index.js"></script>
+
+    <!--Bootstrap JSS/Jquery CDN-->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+</body>
+</html>
