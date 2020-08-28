@@ -88,7 +88,7 @@ const sortLowestPriority = () => {
        highLow.style.display = "flex";
        lowHigh.style.display = "flex";
        items.forEach((todo) => {
-           createTodoItem(todo.task, todo.priority);
+           createTodoItem(todo.task, todo.priority, todo.id_);
        });
    }, 500);
 };
@@ -129,7 +129,7 @@ const sortHighestPriority = () => {
       highLow.style.display = "flex";
       lowHigh.style.display = "flex";
       items.forEach((todo) => {
-        createTodoItem(todo.task, todo.priority);
+        createTodoItem(todo.task, todo.priority, todo.id_);
       });
     }, 500);
   };

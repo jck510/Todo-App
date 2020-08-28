@@ -1,6 +1,188 @@
 /*A reset, will reset the page*/
+
 * {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+}
+
+.nav__container{
+    width: 100vw;
+    height: 4rem;
+    position: fixed;
+    top: 0;
+    color: #fff;
+    background-color: rgb(70,62,62);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+
+}
+
+
+.container_{
+    margin: auto;
+    width: 50vw;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.task__container{
+    margin: 8vh auto;
+    margin-bottom: 30px;
+    max-width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.task__text{
+    padding: 1rem;
+    position: relative;
+
+}
+
+.list__content__box{
+    width: 100%;
+    word-wrap: break-word;
+}
+
+.task__container input{
+    padding: .5rem;
+    margin: 1rem 0;
+}
+
+.task__container input#priority__input{
+    width: 6.3rem;
+    text-align: center;
+}
+
+#task__input {
+    border: none;
+    border-bottom: 1px solid #000;
+}
+
+.list__item{
+    display: flex;
+    position: relative;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    min-height: 6rem;
+    width: 50vw;
+    margin-bottom: 1.5rem;
+    border: none;
+    border-radius: 3px;
+    box-shadow: 5px 10px 18px #888888;
+
+}
+
+.list__item:nth-child(odd){
+    background-color: #f1f3f8;
+}
+
+.list__item:nth-child(even){
+    background-color: #d6e0f0;
+}
+
+.list__item:hover{
+    /*move the box up slightly for a nicer visual*/
+
+    transform: translate(0,-5px);
+    transition: .1s ease-in;
+}
+
+#list__todo-items{
+    margin: 1rem auto;
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+}
+
+#submit__task {
+    width: 6.3rem;
+    height: 3rem;
+    margin-top: 1rem;
+    border: none;
+    border-radius: 3px;
+    background-color: rgb(15,76,117);
+    color: #fff;
+}
+
+.delete__task-btn{
+    border: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    width: 2rem;
+    height: 2rem;
+    background-color: #ff7171;
+}
+
+.delete__task-btn:hover{
+    cursor: pointer;
+    opacity: .8;
+}
+
+#submit__task:hover{
+    cursor: pointer;
+
+}
+
+.filterables{
+    display:flex;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+    margin-bottom: 2rem;
+}
+
+.priority__icon{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    /*Put in top right corner */
+    top: 0;
+    right: 0;
+    background-color: #0f4c75;
+    color: #fff;
+}
+
+#sort__high, #sort__low{
+    padding: 5px 15px 5px 15px;
+    border-radius: 5px;
+    border: none;
+}
+
+#sort__high:hover, #sort__low:hover{
+    cursor:pointer;
+}
+
+#sort__high{
+    background-color: #8d93ab;
+    color: #fff;
+    font-weight: 100;
+
+}
+
+#sort__low{
+    background-color: #393b44;
+    color: #fff;
+    font-weight: 100;
+}
+
+.spin{
+    width: 150px !important;
+    height: 150px !important;
 }
